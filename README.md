@@ -5,4 +5,4 @@ Clickstart example of a Spring/Hibernate application that can be deployed to Clo
 
 Source code for the example is available on [GitHub](https://github.com/cloudfoundry-samples/springmvc-hibernate-template).
 
-<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/mqprichard/cloudfoundry-spring/master/clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
+<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-community/cloudfoundry-spring/master/clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
