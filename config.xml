@@ -80,23 +80,53 @@ Cloud Foundry/Spring Source springmvc-hibernate sample application (https://gith
 <settingConfigId/>
 <globalSettingConfigId/>
 <reporters/>
-<publishers/>
+<publishers>
+<com.cloudbees.plugins.deployer.DeployPublisher plugin="cloudbees-deployer-plugin@4.1">
+<deployIfUnstable>false</deployIfUnstable>
+<hosts>
+<com.cloudbees.plugins.deployer.impl.cloudfoundry.HostImpl plugin="cloudfoundry-deploy-engine@1.1">
+<targets class="java.util.Collections$UnmodifiableRandomAccessList" resolves-to="java.util.Collections$UnmodifiableList">
+<c class="list">
+<com.cloudbees.plugins.deployer.impl.cloudfoundry.TargetImpl>
+<artifact class="com.cloudbees.plugins.deployer.sources.MavenArtifactDeploySource" plugin="cloudbees-deployer-plugin@4.1">
+<groupId>org.cloudfoundry.templates</groupId>
+<artifactId>springmvc31</artifactId>
+<type>war</type>
+</artifact>
+<url>
+springmvc-hibernate-${account}.cloudfoundry.com
+</url>
+<runtime>java</runtime>
+<name>springmvc-hibernate</name>
+<memory>512</memory>
+<instances>1</instances>
+<framework>java_web</framework>
+<command/>
+<start>true</start>
+<environmentVariables/>
+<services>
+<com.cloudbees.plugins.deployer.impl.cloudfoundry.TargetImpl_-AppService>
+<name>postgresql-springmvc-hibernate</name>
+<service>postgresql</service>
+<version>9.0</version>
+</com.cloudbees.plugins.deployer.impl.cloudfoundry.TargetImpl_-AppService>
+<com.cloudbees.plugins.deployer.impl.cloudfoundry.TargetImpl_-AppService>
+<name>redis-springmvc-hibernate</name>
+<service>redis</service>
+<version>2.2</version>
+</com.cloudbees.plugins.deployer.impl.cloudfoundry.TargetImpl_-AppService>
+</services>
+</com.cloudbees.plugins.deployer.impl.cloudfoundry.TargetImpl>
+</c>
+<list reference="../c"/>
+</targets>
+<cloud>https://api.cloudfoundry.com</cloud>
+</com.cloudbees.plugins.deployer.impl.cloudfoundry.HostImpl>
+</hosts>
+</com.cloudbees.plugins.deployer.DeployPublisher>
+</publishers>
 <buildWrappers/>
-<prebuilders>
-<hudson.tasks.Shell>
-<command>
-#Create CLOUDBEES_ACCOUNT.properties with account name for Cloud Foundry Deployment Hostname 
-#This will be injected into the build and can be used to specify a globally-unique name for deployment to cloudfoundry.com 
-echo -n CLOUDBEES_ACCOUNT= > CLOUDBEES_ACCOUNT.properties 
-echo `echo $JENKINS_URL | awk -F'.' '{print $1}' | sed 's/https:\/\///g'` >> CLOUDBEES_ACCOUNT.properties
-</command>
-</hudson.tasks.Shell>
-<EnvInjectBuilder plugin="envinject@1.80">
-<info>
-<propertiesFilePath>CLOUDBEES_ACCOUNT.properties</propertiesFilePath>
-</info>
-</EnvInjectBuilder>
-</prebuilders>
+<prebuilders/>
 <postbuilders/>
 <runPostStepsIfResult>
 <name>FAILURE</name>
