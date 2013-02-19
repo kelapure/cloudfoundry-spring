@@ -2,7 +2,7 @@
     "id": "cloudfoundry-spring",
     "name": "Spring+Hibernate (Cloud Foundry)",
     "source": "git://github.com/cloudfoundry-samples/springmvc-hibernate-template.git",
-    "description" : "DEV@Cloud build for deployment to Cloud Foundry",
+    "description" : "DEV@cloud build for deployment to Cloud Foundry",
     "disabled" : "true",
 
     "build-with-jenkins": {
