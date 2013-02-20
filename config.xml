@@ -120,6 +120,7 @@ springmvc-hibernate-${account}.cloudfoundry.com
 </c>
 <list reference="../c"/>
 </targets>
+<user></user>
 <cloud>https://api.cloudfoundry.com</cloud>
 </com.cloudbees.plugins.deployer.impl.cloudfoundry.HostImpl>
 </hosts>
