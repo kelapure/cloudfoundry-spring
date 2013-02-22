@@ -94,7 +94,7 @@ Cloud Foundry/Spring Source springmvc-hibernate sample application (https://gith
 <type>war</type>
 </artifact>
 <url>springmvc-hibernate-${account}.cloudfoundry.com</url>
-<runtime>java</runtime>
+<runtime>java7</runtime>
 <name>springmvc-hibernate</name>
 <memory>512</memory>
 <instances>1</instances>
