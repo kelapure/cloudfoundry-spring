@@ -1,6 +1,6 @@
 {
     "id": "cloudfoundry-spring",
-    "name": "Spring+Hibernate (Cloud Foundry)",
+    "name": "Spring Boot  (Cloud Foundry)",
     "source": "git://github.com/kelapure/FizzBuzz.git",
     "description" : "DEV@cloud build for deployment to Cloud Foundry",
     "disabled" : "true",
